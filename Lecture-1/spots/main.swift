@@ -1,10 +1,3 @@
-//
-//  main.swift
-//  ter
-//
-//  Created by Admin on 2022-09-20.
-//
-
 //import Foundation
 
 var animal: UInt8 = 32
