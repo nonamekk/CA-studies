@@ -1,5 +1,5 @@
 <a href="../../README.md">
-<img src="../../.readme/assets/codeacademy-black.svg" height="42">
+<img src="../../.readme/assets/codeacademy-white.svg" height="42">
 </a>
 
 ## MacOS Tips'n'Tricks

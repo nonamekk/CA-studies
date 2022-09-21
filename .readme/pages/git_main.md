@@ -1,6 +1,6 @@
 <a href="../../README.md">
 <img 
-src="../../.readme/assets/codeacademy-black.svg" 
+src="../../.readme/assets/codeacademy-white.svg" 
 height="42">
 </a>
 
