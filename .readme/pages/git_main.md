@@ -86,3 +86,24 @@ $ git branch -D <name_of_the_branch>
 on Github
 $ git push origin :<name_of_the_branch>
 ```
+
+#### Branching
+
+Regular Git Branches:
+- Development (dev)
+- Master (master)
+- QA (QA) or test branch
+
+Temporary Git Branches
+- bugfix
+- hotfix
+- feature
+- expiremental
+- WIP 
+
+Branching naming convention
+- starting branch name with a Group word (experimental_home-button-add) or (branch-type_commit)
+- using the Unique ID (hotfix_1111_rename-variable) or (branch-type_id_commit)
+- adding author name (nonamekk_feature_registration-window) or (author_branch-type_branch-name)
+
+
