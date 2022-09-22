@@ -11,8 +11,6 @@
 // - https://stackoverflow.com/a/27766320
 // - https://www.advancedswift.com/comments-documentation-swift/
 
-import Foundation
-
 var integersArray = [Int]()
 var names = [Int: String]()
 var names_opposite: [String: Int] = [String: Int]()
@@ -95,14 +93,21 @@ divisableNumbersPrint(a: 9, b: 3)
 
 // Other notes:
 // Where did the main.swift went after pushed commit to Github?
+//
 // What was done:
-// - Folder containing project was renamed to Lecture 2
+// - Folder containing project was renamed to Lecture-2
 // - git commit by adding . was done
 // - folder had _ in the name (outputs_docs)
 // - outputs_docs after commit and push became unaccessible on Github
 // - Creating a new project without underscore
 // - Commiting new project had access to the folder with main.swift
+//
+// What was found?
+// - Naming the folder with _ is allowed
+// - Renaming the main folder is allowed
+// - Not using Foundation import for using String is allowed (read more on https://developer.apple.com/documentation/foundation)
+//
+//
 // Possible reason of the problem?
-// - Naming the folder with underscore, bundle identifier saves project with dash
-// Recommendation:
-// - use dash (-) (untested)
+// - Unknown.
+
