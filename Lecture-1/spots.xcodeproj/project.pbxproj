@@ -23,7 +23,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		8492DE0F28DA2E9300C5DC61 /* lecture-1 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "lecture-1"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8492DE0F28DA2E9300C5DC61 /* spots */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = spots; sourceTree = BUILT_PRODUCTS_DIR; };
 		8492DE1228DA2E9300C5DC61 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -49,7 +49,7 @@
 		8492DE1028DA2E9300C5DC61 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8492DE0F28DA2E9300C5DC61 /* lecture-1 */,
+				8492DE0F28DA2E9300C5DC61 /* spots */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -65,9 +65,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		8492DE0E28DA2E9300C5DC61 /* lecture-1 */ = {
+		8492DE0E28DA2E9300C5DC61 /* spots */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8492DE1628DA2E9300C5DC61 /* Build configuration list for PBXNativeTarget "lecture-1" */;
+			buildConfigurationList = 8492DE1628DA2E9300C5DC61 /* Build configuration list for PBXNativeTarget "spots" */;
 			buildPhases = (
 				8492DE0B28DA2E9300C5DC61 /* Sources */,
 				8492DE0C28DA2E9300C5DC61 /* Frameworks */,
@@ -77,9 +77,9 @@
 			);
 			dependencies = (
 			);
-			name = "lecture-1";
+			name = spots;
 			productName = ter;
-			productReference = 8492DE0F28DA2E9300C5DC61 /* lecture-1 */;
+			productReference = 8492DE0F28DA2E9300C5DC61 /* spots */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
@@ -97,7 +97,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 8492DE0A28DA2E9300C5DC61 /* Build configuration list for PBXProject "lecture-1" */;
+			buildConfigurationList = 8492DE0A28DA2E9300C5DC61 /* Build configuration list for PBXProject "spots" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -110,7 +110,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				8492DE0E28DA2E9300C5DC61 /* lecture-1 */,
+				8492DE0E28DA2E9300C5DC61 /* spots */,
 			);
 		};
 /* End PBXProject section */
@@ -261,7 +261,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		8492DE0A28DA2E9300C5DC61 /* Build configuration list for PBXProject "lecture-1" */ = {
+		8492DE0A28DA2E9300C5DC61 /* Build configuration list for PBXProject "spots" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8492DE1428DA2E9300C5DC61 /* Debug */,
@@ -270,7 +270,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8492DE1628DA2E9300C5DC61 /* Build configuration list for PBXNativeTarget "lecture-1" */ = {
+		8492DE1628DA2E9300C5DC61 /* Build configuration list for PBXNativeTarget "spots" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8492DE1728DA2E9300C5DC61 /* Debug */,

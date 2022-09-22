@@ -3,6 +3,7 @@
 </a>
 
 ## Swift - iOS Open-learning workbook
-Contents:
+
+#### Additional notes contents:
 - [MacOS Tips'n'Tricks](.readme/pages/macos_tips.md)
 - [Git](.readme/pages/git_main.md)
