@@ -57,6 +57,8 @@ or
 $ git switch -c <name_of_new_branch>
 ```
 
+> *Tip*: It's better to do merges on Github with pull requests
+
 Finally merge the new local branch with the main
 remote:
 > *Tip*: To merge already pushed branch with
