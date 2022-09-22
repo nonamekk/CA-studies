@@ -1,12 +1,3 @@
-//
-//  main.swift
-//  outputs
-//
-//  Created by Admin on 2022-09-22.
-//
-
-import Foundation
-
 // Lecture 2
 //
 // Declaring constants and variables
@@ -20,6 +11,7 @@ import Foundation
 // - https://stackoverflow.com/a/27766320
 // - https://www.advancedswift.com/comments-documentation-swift/
 
+import Foundation
 
 var integersArray = [Int]()
 var names = [Int: String]()
