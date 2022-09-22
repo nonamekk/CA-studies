@@ -92,3 +92,17 @@ func divisableNumbersPrint(a: Int, b: Int) {
 toOutput(names[0]!)
 toOutputWhenName(names_opposite, "Lukas")
 divisableNumbersPrint(a: 9, b: 3)
+
+// Other notes:
+// Where did the main.swift went after pushed commit to Github?
+// What was done:
+// - Folder containing project was renamed to Lecture 2
+// - git commit by adding . was done
+// - folder had _ in the name (outputs_docs)
+// - outputs_docs after commit and push became unaccessible on Github
+// - Creating a new project without underscore
+// - Commiting new project had access to the folder with main.swift
+// Possible reason of the problem?
+// - Naming the folder with underscore, bundle identifier saves project with dash
+// Recommendation:
+// - use dash (-) (untested)
