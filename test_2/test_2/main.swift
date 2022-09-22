@@ -105,7 +105,7 @@ divisableNumbersPrint(a: 9, b: 3)
 // What was found?
 // - Naming the folder with _ is allowed
 // - Renaming the main folder is allowed
-// 
+//
 //
 // Possible reason of the problem?
 // - Unknown.
