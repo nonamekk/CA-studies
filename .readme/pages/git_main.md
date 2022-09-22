@@ -22,6 +22,11 @@ $ git push
 > *Tip*: Use access token for your password 
 (Account/Settings/Personal access tokens)
 
+Reset commit changes:
+```
+$ git reset HEAD~1
+```
+
 To see which branch you are on:
 ```
 $ git branch -v
