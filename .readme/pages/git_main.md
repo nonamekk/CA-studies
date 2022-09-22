@@ -87,23 +87,32 @@ on Github
 $ git push origin :<name_of_the_branch>
 ```
 
-#### Branching
+Updating <code>.gitignore</code>, **commit everything before trying**
+> Check [gitignore for Xcode](https://github.com/github/gitignore/blob/main/Swift.gitignore#L28)
+```
+$ git rm -rf --cached .
+$ git add .
+```
 
-Regular Git Branches:
-- Development (dev)
-- Master (master)
-- QA (QA) or test branch
+---
+ 
+### Branching
 
-Temporary Git Branches
-- bugfix
-- hotfix
-- feature
-- expiremental
-- WIP 
+- Regular Git Branches:
+	- Development (dev)
+	- Master (master)
+	- QA (QA) or test branch
 
-Branching naming convention
-- starting branch name with a Group word (experimental_home-button-add) or (branch-type_commit)
-- using the Unique ID (hotfix_1111_rename-variable) or (branch-type_id_commit)
-- adding author name (nonamekk_feature_registration-window) or (author_branch-type_branch-name)
+- Temporary Git Branches
+	- bugfix
+	- hotfix
+	- feature
+	- expiremental
+	- WIP 
+
+- Branching naming convention
+	- starting branch name with a Group word (experimental_home-button-add) or (branch-type_commit)
+	- using the Unique ID (hotfix_1111_rename-variable) or (branch-type_id_commit)
+	- adding author name (nonamekk_feature_registration-window) or (author_branch-type_branch-name)
 
 

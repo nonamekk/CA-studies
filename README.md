@@ -8,5 +8,3 @@
 - [MacOS Tips'n'Tricks](.readme/pages/macos_tips.md)
 - [Git](.readme/pages/git_main.md)
 
-#### Other useful links
-- [gitignore for Xcode](https://github.com/github/gitignore/blob/main/Swift.gitignore#L28)
