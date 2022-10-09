@@ -17,6 +17,7 @@ struct Alarm: Codable {
     func add() {
         var alarmsDefaults = Alarms.obtainArrayFromDefault()
         alarmsDefaults.append(self)
+        alarmsDefaults.sort { $0.time < $1.time}
         Alarms.setArrayToDefault(alarmsDefaults)
     }
     
