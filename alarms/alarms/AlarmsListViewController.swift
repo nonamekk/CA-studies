@@ -8,12 +8,18 @@
 import UIKit
 
 struct Alarm: Codable {
-    // time in minutes
     let uuid: String
     var time: Int
+    /// isOn alarm switch state
     var isOn: Bool
     var description: String
     
+    /// Adds struct data to UserDefaults
+    ///  ## Description: ##
+    /// - obtains from UserDefaults
+    /// - adds new struct
+    /// - sorts by time ascending
+    /// - updates array to UserDefaults
     func add() {
         var alarmsDefaults = Alarms.obtainArrayFromDefault()
         alarmsDefaults.append(self)
@@ -21,6 +27,12 @@ struct Alarm: Codable {
         Alarms.setArrayToDefault(alarmsDefaults)
     }
     
+    /// Removes current struct by uuid from UserDefaults
+    /// ## Description: ##
+    ///  - obtains from UserDefaults
+    /// - checks if the array is empty
+    /// - if it is not add each of the array's elements excluding one that has the same uuid as current struct
+    /// - updates array to UserDefaults
     func remove() {
         let alarmsDefaults = Alarms.obtainArrayFromDefault()
         
@@ -37,6 +49,12 @@ struct Alarm: Codable {
         }
     }
     
+    /// Changes isOn switch by uuid using data from UserDefaults
+    /// ## Description: ##
+    /// - obtains from UserDefaults
+    /// - checks if the array is empty
+    /// - if it is not add each of the array's elements without changes, apply change to one that has the same uuid as current struct
+    /// - updates array to UserDefaults
     func changeSwitch() {
         let alarmsDefaults = Alarms.obtainArrayFromDefault()
         
@@ -64,6 +82,7 @@ extension Encodable {
     }
 }
 
+/// Decodes data from String to specified type
 func instantiate<T: Decodable>(jsonString: String) -> T? {
     return try? JSONDecoder().decode(T.self, from: jsonString.data(using: .utf8)!)
 }
@@ -76,16 +95,19 @@ class Alarms {
         self.list = Alarms.obtainArrayFromDefault()
     }
     
+    /// Removes element by index from UserDefaults and list array
     func remove(at index: Int) {
         list[index].remove()
         list.remove(at: index)
     }
     
+    /// Changes switch isOn by index from list array and UserDefaults
     func changeSwitch(at index: Int) {
         list[index].isOn = list[index].isOn ? false : true
         list[index].changeSwitch()
     }
     
+    /// Obtains JSON from UserDefaults and instantiates it into Alarm array
     static func obtainArrayFromDefault() -> [Alarm] {
         let fromJson = defaults.string(forKey: "alarmsArrayJson")
         let alarmsList: [Alarm]? = instantiate(jsonString: fromJson ?? "")
@@ -96,6 +118,7 @@ class Alarms {
         }
     }
 
+    // Saves Alarm array to UserDefaults in JSON string
     static func setArrayToDefault(_ alarmsDefaults: [Alarm]) {
         let toJson = alarmsDefaults.toJSONString()
         defaults.set(toJson, forKey: "alarmsArrayJson")
@@ -137,8 +160,6 @@ extension AlarmsListViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "alarmCell", for: indexPath) as! AlarmViewCell
         
         // alarm time
-        
-        
         var timeMinutes: String = "\(alarms.list[indexPath.row].time % 60)"
         if timeMinutes.count < 2 {
             timeMinutes = "0\(timeMinutes)"

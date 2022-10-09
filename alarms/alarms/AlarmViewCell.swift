@@ -13,19 +13,14 @@ class AlarmViewCell: UITableViewCell {
     @IBOutlet weak var alarmActiveSwitch: UISwitch!
     @IBOutlet weak var alarmDescriptionLabel: UILabel!
     
+    /// Changes alarm cell isOn switch, by pressing a switch button
     @IBAction func alarmSwitchAction(_ sender: Any) {
-//        let ok = self.indexPath.flatMap {
-//            print($0[1])
-//        }
-//        print(getIndexPath()?.row ?? "")
         if let index = getIndexPath()?.row {
             let alarms = Alarms()
             alarms.changeSwitch(at: index)
         }
     }
-    @IBAction func t(_ sender: Any) {
-        print("ok")
-    }
+
     override func awakeFromNib() {
         super.awakeFromNib()
     }
@@ -34,6 +29,9 @@ class AlarmViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
+    /// Provides cell IndexPath with superview
+    ///  ## Returns: ##
+    ///  IndexPath: [0, 0] or [section, row[
     func getIndexPath() -> IndexPath? {
         guard let superView = self.superview as? UITableView else {
             print("superview is not a UITableView - getIndexPath")

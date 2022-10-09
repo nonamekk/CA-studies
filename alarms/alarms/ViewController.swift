@@ -23,7 +23,6 @@ class ViewController: UIViewController {
         
         let alarmTime: Int = hour * 60 + minute
         
-//        var alarmDescription: String = alarmDescription.text ?? "Alarm"
         var description = "Alarm"
         if let d = alarmDescription.text {
             if d != "" {
