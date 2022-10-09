@@ -43,7 +43,7 @@
                                             <constraint firstAttribute="height" constant="40" id="DSD-oC-hET"/>
                                         </constraints>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="gray" title="Create Alarm"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Create Alarm"/>
                                         <connections>
                                             <action selector="createAlarmButtonCreate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BNL-xC-LlC"/>
                                         </connections>
@@ -55,7 +55,7 @@
                                             <constraint firstAttribute="height" constant="40" id="T72-Eh-PXn"/>
                                         </constraints>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="gray" title="View Alarms"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="View Alarms"/>
                                         <connections>
                                             <segue destination="A4f-3L-zKd" kind="presentation" id="0a8-Bp-0Rq"/>
                                         </connections>
@@ -107,36 +107,32 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="f8m-W2-FBh">
-                                <rect key="frame" x="32" y="47" width="326" height="666"/>
+                                <rect key="frame" x="16" y="16" width="358" height="739"/>
                                 <subviews>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelectionDuringEditing="YES" rowHeight="127" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Phe-3K-Z0w">
-                                        <rect key="frame" x="0.0" y="0.0" width="326" height="666"/>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelectionDuringEditing="YES" rowHeight="127" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Phe-3K-Z0w">
+                                        <rect key="frame" x="0.0" y="0.0" width="358" height="739"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFit" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="myCell" rowHeight="120" id="liv-lZ-ZFA" customClass="AlarmViewCell" customModule="alarms" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="50" width="326" height="120"/>
+                                                <rect key="frame" x="0.0" y="50" width="358" height="120"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="liv-lZ-ZFA" id="zUa-sO-HT2">
-                                                    <rect key="frame" x="0.0" y="0.0" width="326" height="120"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="358" height="120"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </tableViewCellContentView>
                                             </tableViewCell>
                                         </prototypes>
                                     </tableView>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="666" id="YNi-3R-Fva"/>
-                                    <constraint firstAttribute="width" constant="326" id="p8D-Qg-52e"/>
-                                </constraints>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ZEs-87-HWf"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="ZEs-87-HWf" firstAttribute="trailing" secondItem="f8m-W2-FBh" secondAttribute="trailing" constant="32" id="JDA-En-5zf"/>
-                            <constraint firstItem="f8m-W2-FBh" firstAttribute="top" secondItem="ZEs-87-HWf" secondAttribute="top" id="Rg1-nY-hEP"/>
-                            <constraint firstItem="f8m-W2-FBh" firstAttribute="leading" secondItem="ZEs-87-HWf" secondAttribute="leading" constant="32" id="akS-ax-LcJ"/>
-                            <constraint firstItem="ZEs-87-HWf" firstAttribute="bottom" secondItem="f8m-W2-FBh" secondAttribute="bottom" constant="74" id="d1P-5F-Aa4"/>
+                            <constraint firstItem="ZEs-87-HWf" firstAttribute="bottom" secondItem="f8m-W2-FBh" secondAttribute="bottom" constant="32" id="56T-NJ-cx9"/>
+                            <constraint firstItem="ZEs-87-HWf" firstAttribute="trailing" secondItem="f8m-W2-FBh" secondAttribute="trailing" constant="16" id="Eva-7j-Ioa"/>
+                            <constraint firstItem="f8m-W2-FBh" firstAttribute="top" secondItem="gix-wR-xEx" secondAttribute="top" constant="16" id="jyR-m6-Y09"/>
+                            <constraint firstItem="f8m-W2-FBh" firstAttribute="leading" secondItem="ZEs-87-HWf" secondAttribute="leading" constant="16" id="sWA-vx-DIE"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="xk6-qH-kfL"/>

@@ -14,29 +14,14 @@ struct Alarm: Codable {
     var isOn: Bool
     var description: String
     
-    private func obtainArrayFromDefault() -> [Alarm] {
-        let fromJson = defaults.string(forKey: "alarmsArrayJson")
-        let alarmsList: [Alarm]? = instantiate(jsonString: fromJson ?? "")
-        if let alarmsList = alarmsList {
-            return alarmsList
-        } else {
-            return []
-        }
-    }
-    
-    private func setArrayToDefault(_ alarmsDefaults: [Alarm]) {
-        let toJson = alarmsDefaults.toJSONString()
-        defaults.set(toJson, forKey: "alarmsArrayJson")
-    }
-    
     func add() {
-        var alarmsDefaults = obtainArrayFromDefault()
+        var alarmsDefaults = Alarms.obtainArrayFromDefault()
         alarmsDefaults.append(self)
-        setArrayToDefault(alarmsDefaults)
+        Alarms.setArrayToDefault(alarmsDefaults)
     }
     
     func remove() {
-        let alarmsDefaults = obtainArrayFromDefault()
+        let alarmsDefaults = Alarms.obtainArrayFromDefault()
         
         if !alarmsDefaults.isEmpty {
             var newAlarmsDefaults: [Alarm] = []
@@ -47,12 +32,12 @@ struct Alarm: Codable {
                 }
                 
             }
-            setArrayToDefault(newAlarmsDefaults)
+            Alarms.setArrayToDefault(newAlarmsDefaults)
         }
     }
     
     func changeSwitch() {
-        let alarmsDefaults = obtainArrayFromDefault()
+        let alarmsDefaults = Alarms.obtainArrayFromDefault()
         
         if !alarmsDefaults.isEmpty {
             var newAlarmsDefaults: [Alarm] = []
@@ -64,7 +49,7 @@ struct Alarm: Codable {
                 newAlarmsDefaults.append(each)
                 
             }
-            setArrayToDefault(newAlarmsDefaults)
+            Alarms.setArrayToDefault(newAlarmsDefaults)
         }
     }
 }
@@ -76,8 +61,8 @@ extension Encodable {
         let jsonData = try! JSONEncoder().encode(self)
         return String(data: jsonData, encoding: .utf8)!
     }
-    
 }
+
 func instantiate<T: Decodable>(jsonString: String) -> T? {
     return try? JSONDecoder().decode(T.self, from: jsonString.data(using: .utf8)!)
 }
@@ -87,30 +72,35 @@ func instantiate<T: Decodable>(jsonString: String) -> T? {
 class Alarms {
     var list: [Alarm] = []
     init() {
-//        self.list = defaults.array(forKey: "alarmsArray") as? [Alarm] ?? []
-        
-        let fromJson = defaults.string(forKey: "alarmsArrayJson")
-        let alarmsList: [Alarm]? = instantiate(jsonString: fromJson ?? "")
-        if let alarmsList = alarmsList {
-            self.list = alarmsList
-        } else {
-            self.list = []
-        }
-        
+        self.list = Alarms.obtainArrayFromDefault()
     }
+    
     func remove(at index: Int) {
         list[index].remove()
         list.remove(at: index)
     }
+    
     func changeSwitch(at index: Int) {
         list[index].isOn = list[index].isOn ? false : true
         list[index].changeSwitch()
-        
-        
+    }
+    
+    static func obtainArrayFromDefault() -> [Alarm] {
+        let fromJson = defaults.string(forKey: "alarmsArrayJson")
+        let alarmsList: [Alarm]? = instantiate(jsonString: fromJson ?? "")
+        if let alarmsList = alarmsList {
+            return alarmsList
+        } else {
+            return []
+        }
+    }
+
+    static func setArrayToDefault(_ alarmsDefaults: [Alarm]) {
+        let toJson = alarmsDefaults.toJSONString()
+        defaults.set(toJson, forKey: "alarmsArrayJson")
     }
 }
 
-//var alarmsList: [Alarm] = defaults.array(forKey: "alarmsArray") as? [Alarm] ?? []
 let defaults = UserDefaults.standard
 var alarms: Alarms = Alarms()
 
@@ -125,44 +115,29 @@ class AlarmsListViewController: UIViewController {
         alarmsTableView.delegate = self
         
         alarmsTableView.register(UINib(nibName: "AlarmViewCell", bundle: nil), forCellReuseIdentifier: "alarmCell")
-        
-//        for each in alarmsList {
-//            print(each.time)
-//        }
-//        alarmsTableView.estimatedRowHeight = 120
-//        alarmsTableView.reloadData()
-        
-        
-        
-           
-           
-        alarmsTableView.estimatedRowHeight = UITableView.automaticDimension
-        self.view.addSubview(alarmsTableView)
-        
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {
-//        alarms = Alarms()
         super.viewDidAppear(animated)
     }
 
 }
 
 extension AlarmsListViewController: UITableViewDataSource {
+    
+    /// Returns ammount of table rows required for table
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return alarms.list.count
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-       return UITableView.automaticDimension
-    }
-    
+    /// Creates cells for rows
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "alarmCell", for: indexPath) as! AlarmViewCell
         
         // alarm time
+        
+        
         var timeMinutes: String = "\(alarms.list[indexPath.row].time % 60)"
         if timeMinutes.count < 2 {
             timeMinutes = "0\(timeMinutes)"
@@ -182,6 +157,12 @@ extension AlarmsListViewController: UITableViewDataSource {
 }
 
 extension AlarmsListViewController: UITableViewDelegate {
+    
+    /// Provides changes for editable cell when cell row is pulled to the left
+    ///  # Notes: #
+    /// editingStyle can be .delete , .insert or .none
+    /// removes alarm from the UserDefaults and Alarms list array
+    /// reloads data of tableView
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             alarms.remove(at: indexPath.row)
@@ -190,14 +171,14 @@ extension AlarmsListViewController: UITableViewDelegate {
         }
     }
     
+    /// Provides changes when table cell row is selected
+    /// # Notes: #
+    /// changes switch Boolean value in UserDefaults and Alarms list array
+    /// reloads data of tableView
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        alarms.changeSwitch(at: indexPath.row)
-        
+//        alarms.changeSwitch(at: indexPath.row)
+        // TODO: pop-up to change alarm
         tableView.reloadData()
     }
-    
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        return 120
-//    }
 }
 
