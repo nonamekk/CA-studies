@@ -8,4 +8,5 @@
 - [MacOS Tips'n'Tricks](.readme/pages/macos_tips.md)
 - [Git](.readme/pages/git_main.md)
 - Swift
-    -[UserDefaults](.readme/pages/user_defaults.md)
+    - [UserDefaults](.readme/pages/user_defaults.md)
+    - [Removing numbers after separator in <code>Double</code> numbers](.readme/pages/cut_round_doubles.md)
