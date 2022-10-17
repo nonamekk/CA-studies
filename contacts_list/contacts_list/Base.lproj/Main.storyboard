@@ -29,7 +29,7 @@
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="G43-Mu-t2X">
                                         <rect key="frame" x="0.0" y="33.333333333333329" width="358" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" textContentType="name"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8O7-hr-b2P">
                                         <rect key="frame" x="0.0" y="80.333333333333343" width="358" height="20.333333333333329"/>
@@ -40,7 +40,7 @@
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eHn-tm-mKL">
                                         <rect key="frame" x="0.0" y="113.66666666666666" width="358" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="phonePad" textContentType="tel"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="glk-lc-0dx">
                                         <rect key="frame" x="0.0" y="160.66666666666666" width="358" height="34.333333333333343"/>
@@ -98,7 +98,7 @@
                                 <rect key="frame" x="0.0" y="106" width="390" height="659"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFit" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="82" id="3mK-UC-eh3" customClass="ContactCellView">
+                                    <tableViewCell contentMode="scaleAspectFit" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="82" id="3mK-UC-eh3" customClass="ContactCellView">
                                         <rect key="frame" x="0.0" y="50" width="390" height="82"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3mK-UC-eh3" id="Ydg-u3-IfA">
@@ -121,6 +121,7 @@
                             <constraint firstItem="Rae-eR-OcN" firstAttribute="centerY" secondItem="3ho-kl-eZB" secondAttribute="centerY" constant="7" id="qgO-QU-hhu"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="Zvh-fy-nFW"/>
                     <connections>
                         <outlet property="contactListView" destination="Rae-eR-OcN" id="W1R-Lo-FHj"/>
                     </connections>

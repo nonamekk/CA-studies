@@ -7,24 +7,20 @@
 
 import UIKit
 
-var contactsTupleList = [
-    ("Name", "+37012300111"),
-    ("Name3", "+37012300123"),
-    ("Name2", "+37012300122"),
-    ("Name4", "+37012300123"),
-    ("Name5", "+37012300223"),
-    ("Name6", "+37012300100"),
-]
-
 class ContactsListViewController: UIViewController {
     @IBOutlet weak var contactListView: UITableView!
+    
+    var contactsTupleList = [
+        ("Name", "+37012300111"),
+        ("Name3", "+37012300123"),
+        ("Name2", "+37012300122"),
+        ("Name4", "+37012300123"),
+        ("Name5", "+37012300223"),
+        ("Name6123123123123123123123123112301231231 231", "+37012300100"),
+    ]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        NotificationCenter.default.addObserver(self,
-                                                   selector: #selector(updateTable),
-                                                   name: NSNotification.Name(rawValue: "update_table"),
-                                                   object: nil)
         
         contactListView.frame = self.view.frame
         contactListView.dataSource = self
@@ -35,6 +31,21 @@ class ContactsListViewController: UIViewController {
         
         
         contactListView.register(UINib(nibName: "ContactViewCell", bundle: nil), forCellReuseIdentifier: "contactCell")
+    }
+    
+    func saveContact(name: String, phone: String, elementIndex: Int?) {
+        if let i = elementIndex {
+            self.contactsTupleList[i] = (name, phone)
+        } else {
+            self.contactsTupleList.append((name, phone))
+        }
+        self.contactListView.reloadData()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? ContactCreationViewController {
+            destination.savingContact = saveContact
+        }
     }
     
     @objc func updateTable() {
@@ -67,7 +78,7 @@ extension ContactsListViewController: UITableViewDelegate {
     /// reloads data of tableView
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            contactsTupleList.remove(at: indexPath.row)
+            self.contactsTupleList.remove(at: indexPath.row)
 
             tableView.reloadData()
         }
@@ -78,7 +89,7 @@ extension ContactsListViewController: UITableViewDelegate {
     /// Grabs the data from selected cell, performes segue to another view
     /// and sets the data grabbed
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let (name, phone) = contactsTupleList[indexPath.row]
+        let (name, phone) = self.contactsTupleList[indexPath.row]
         let contactData: ContactData = ContactData(elementIndex: indexPath.row, name: name, phone: phone)
         let contactDict: [String: ContactData] = ["contact_data": contactData]
         

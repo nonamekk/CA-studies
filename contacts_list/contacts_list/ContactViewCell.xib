@@ -8,10 +8,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="contactCell" rowHeight="82" id="um6-jy-UOO" customClass="ContactViewCell" customModule="contacts_list" customModuleProvider="target">
+        <tableViewCell contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="contactCell" rowHeight="82" id="um6-jy-UOO" customClass="ContactViewCell" customModule="contacts_list" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="390" height="82"/>
             <autoresizingMask key="autoresizingMask"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="um6-jy-UOO" id="ue4-LT-RPX">
+            <tableViewCellContentView key="contentView" opaque="NO" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="um6-jy-UOO" id="ue4-LT-RPX">
                 <rect key="frame" x="0.0" y="0.0" width="390" height="82"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
@@ -21,8 +21,8 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Namilio" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" id="lpD-aJ-ozK">
-                        <rect key="frame" x="20" y="15.999999999999998" width="350" height="21.333333333333329"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Namilio" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="lpD-aJ-ozK">
+                        <rect key="frame" x="20" y="16" width="350" height="21.333333333333329"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="18"/>
                         <nil key="textColor"/>
@@ -33,7 +33,7 @@
                     <constraint firstItem="p7O-zd-LNO" firstAttribute="top" secondItem="lpD-aJ-ozK" secondAttribute="bottom" constant="8" symbolic="YES" id="CBS-EH-lxn"/>
                     <constraint firstItem="lpD-aJ-ozK" firstAttribute="leading" secondItem="ue4-LT-RPX" secondAttribute="leading" constant="20" symbolic="YES" id="WK6-Zo-21N"/>
                     <constraint firstItem="p7O-zd-LNO" firstAttribute="leading" secondItem="ue4-LT-RPX" secondAttribute="leading" constant="20" symbolic="YES" id="die-lk-Ban"/>
-                    <constraint firstAttribute="trailing" secondItem="lpD-aJ-ozK" secondAttribute="trailing" constant="20" id="s3x-kM-5q9"/>
+                    <constraint firstAttribute="trailing" secondItem="lpD-aJ-ozK" secondAttribute="trailing" id="s3x-kM-5q9"/>
                     <constraint firstItem="lpD-aJ-ozK" firstAttribute="top" secondItem="ue4-LT-RPX" secondAttribute="top" constant="16" id="xzs-ud-7I8"/>
                 </constraints>
             </tableViewCellContentView>
@@ -41,7 +41,7 @@
                 <outlet property="nameLabel" destination="lpD-aJ-ozK" id="w9s-nJ-qSH"/>
                 <outlet property="phoneLabel" destination="p7O-zd-LNO" id="iNK-F6-gh7"/>
             </connections>
-            <point key="canvasLocation" x="7.6923076923076916" y="-132.22748815165878"/>
+            <point key="canvasLocation" x="7.6923076923076916" y="-132.93838862559241"/>
         </tableViewCell>
     </objects>
 </document>

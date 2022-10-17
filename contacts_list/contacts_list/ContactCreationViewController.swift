@@ -22,8 +22,9 @@ class ContactCreationViewController: UIViewController {
     var elementIndex: Int? = nil
     
     @IBAction func unwindHome(_ segue: UIStoryboardSegue) {
-            // this is intentionally blank
-        }
+        // this is intentionally blank
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -33,15 +34,16 @@ class ContactCreationViewController: UIViewController {
                                                    object: nil)
     }
     
+    var savingContact: ((String, String, Int?) -> ())!
+    
     @IBAction func addButton(_ sender: Any) {
         if nameTextField.text != "" && phoneTextField.text != "" {
             if let i = elementIndex {
-                contactsTupleList[i] = (nameTextField.text!, phoneTextField.text!)
+                savingContact(nameTextField.text!, phoneTextField.text!, i)
             } else {
-                contactsTupleList.append((nameTextField.text!, phoneTextField.text!))
+                savingContact(nameTextField.text!, phoneTextField.text!, nil)
             }
             
-            NotificationCenter.default.post(name: Notification.Name(rawValue: "update_table"), object: self)
             self.dismiss(animated: true, completion: nil)
         }
         
