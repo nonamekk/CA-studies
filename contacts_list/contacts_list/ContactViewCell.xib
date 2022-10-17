@@ -22,7 +22,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Namilio" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lpD-aJ-ozK">
-                        <rect key="frame" x="20.000000000000004" y="15.999999999999998" width="57.333333333333343" height="21.333333333333329"/>
+                        <rect key="frame" x="20" y="15.999999999999998" width="350" height="21.333333333333329"/>
                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="18"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -32,6 +32,7 @@
                     <constraint firstItem="p7O-zd-LNO" firstAttribute="top" secondItem="lpD-aJ-ozK" secondAttribute="bottom" constant="8" symbolic="YES" id="CBS-EH-lxn"/>
                     <constraint firstItem="lpD-aJ-ozK" firstAttribute="leading" secondItem="ue4-LT-RPX" secondAttribute="leading" constant="20" symbolic="YES" id="WK6-Zo-21N"/>
                     <constraint firstItem="p7O-zd-LNO" firstAttribute="leading" secondItem="ue4-LT-RPX" secondAttribute="leading" constant="20" symbolic="YES" id="die-lk-Ban"/>
+                    <constraint firstAttribute="trailing" secondItem="lpD-aJ-ozK" secondAttribute="trailing" constant="20" id="s3x-kM-5q9"/>
                     <constraint firstItem="lpD-aJ-ozK" firstAttribute="top" secondItem="ue4-LT-RPX" secondAttribute="top" constant="16" id="xzs-ud-7I8"/>
                 </constraints>
             </tableViewCellContentView>

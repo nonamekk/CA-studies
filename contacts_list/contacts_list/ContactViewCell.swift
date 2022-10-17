@@ -13,7 +13,7 @@ class ContactViewCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+//        nameLabel.numberOfLines = 0
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

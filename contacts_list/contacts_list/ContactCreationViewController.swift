@@ -18,14 +18,12 @@ class ContactCreationViewController: UIViewController {
         }
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     
     @IBAction func addButton(_ sender: Any) {
         if nameTextField.text != "" && phoneTextField.text != "" {
             contactsTupleList.append((nameTextField.text!, phoneTextField.text!))
-            ContactsListViewController().viewDidAppear(true)
+            NotificationCenter.default.post(name: Notification.Name(rawValue: "update_table"), object: self)
             self.dismiss(animated: true, completion: nil)
         }
         

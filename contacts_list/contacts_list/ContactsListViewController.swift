@@ -17,21 +17,29 @@ var contactsTupleList = [
 ]
 
 class ContactsListViewController: UIViewController {
-    @IBAction func refreshNavButton(_ sender: Any) {
-        contactListView.reloadData()
-    }
-    
     @IBOutlet weak var contactListView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        NotificationCenter.default.addObserver(self,
+                                                   selector: #selector(updateTable),
+                                                   name: NSNotification.Name(rawValue: "update_table"),
+                                                   object: nil)
         
         contactListView.frame = self.view.frame
         contactListView.dataSource = self
         contactListView.delegate = self
         
+//        contactListView.rowHeight = UITableView.automaticDimension
+//        contactListView.estimatedRowHeight = 82.0
+        
+        
         contactListView.register(UINib(nibName: "ContactViewCell", bundle: nil), forCellReuseIdentifier: "contactCell")
     }
-
+    
+    @objc func updateTable() {
+        contactListView.reloadData()
+    }
 }
 
 extension ContactsListViewController: UITableViewDataSource {

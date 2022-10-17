@@ -72,7 +72,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2487.6923076923076" y="-23.459715639810426"/>
+            <point key="canvasLocation" x="2465" y="-23"/>
         </scene>
         <!--Contacts List View Controller-->
         <scene sceneID="dMR-tp-EsS">
@@ -86,11 +86,6 @@
                                 <rect key="frame" x="0.0" y="55" width="390" height="44"/>
                                 <items>
                                     <navigationItem title="Contacts" id="gSw-0K-rJo">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="refresh" id="Ju4-3R-8pN">
-                                            <connections>
-                                                <action selector="refreshNavButton:" destination="SdQ-9i-Hqn" id="lPE-4f-4LB"/>
-                                            </connections>
-                                        </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="NLG-G4-WUl">
                                             <connections>
                                                 <segue destination="BYZ-38-t0r" kind="show" id="scT-zB-0kT"/>
@@ -99,7 +94,7 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="82" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Rae-eR-OcN">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="82" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Rae-eR-OcN">
                                 <rect key="frame" x="0.0" y="106" width="390" height="659"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
