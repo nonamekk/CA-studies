@@ -63,7 +63,7 @@ extension ContactsListViewController: UITableViewDelegate {
     /// Provides changes for editable cell when cell row is pulled to the left
     ///  # Notes: #
     /// editingStyle can be .delete , .insert or .none
-    /// removes alarm from the UserDefaults and Alarms list array
+    /// removes contact from the array and
     /// reloads data of tableView
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
@@ -71,5 +71,18 @@ extension ContactsListViewController: UITableViewDelegate {
 
             tableView.reloadData()
         }
+    }
+    
+    /// Provides changes when table cell row is selected
+    /// # Notes: #
+    /// Grabs the data from selected cell, performes segue to another view
+    /// and sets the data grabbed
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let (name, phone) = contactsTupleList[indexPath.row]
+        let contactData: ContactData = ContactData(elementIndex: indexPath.row, name: name, phone: phone)
+        let contactDict: [String: ContactData] = ["contact_data": contactData]
+        
+        performSegue(withIdentifier: "saveShowSegue", sender: nil)
+        NotificationCenter.default.post(name: Notification.Name(rawValue: "set_contact_data"), object: nil, userInfo: contactDict)
     }
 }
