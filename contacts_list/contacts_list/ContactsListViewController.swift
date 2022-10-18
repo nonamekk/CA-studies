@@ -64,7 +64,9 @@ extension ContactsListViewController: UITableViewDataSource {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "contactCell", for: indexPath) as! ContactViewCell
         
-        (cell.nameLabel.text, cell.phoneLabel.text) = contactsTupleList[indexPath.row]
+        let (name, phone) = contactsTupleList[indexPath.row]
+        
+        cell.contactLabel.text = "\(name)\n\(phone)"
         
         return cell
     }

@@ -9,11 +9,10 @@ import UIKit
 
 class ContactViewCell: UITableViewCell {
 
-    @IBOutlet weak var phoneLabel: UILabel!
-    @IBOutlet weak var nameLabel: UILabel!
+
+    @IBOutlet weak var contactLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
-        nameLabel.numberOfLines = 0
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
