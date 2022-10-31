@@ -35,6 +35,25 @@ func toOutputWhenName(_ names: [String: Int], _ to_match: String) {
     }
 }
 
+
+
+/// Prints out the text if divident is divisable or not divisable to the divisor
+///
+/// ## Example ##
+/// ```
+/// divisableNumbersPrint(8,4) // prints out 8 is divisable by 4
+/// ```
+/// - Parameters:
+///     - a: divident
+///     - b: divisor
+func isNumberDivisable(_ a: Int, _ b: Int) -> () {
+//    let divRes: Bool = isNumberDivisable(a, b)
+//    let printPart: String = isNumberDivisable(divRes)
+//    print("\(a) \(printPart) \(b)")
+//
+    print("\(a) \(isNumberDivisable(isNumberDivisable(a, b))) \(b)")
+}
+
 /// Checks if the first number is divisable by the second number
 ///
 /// ## Example ##
@@ -47,10 +66,7 @@ func toOutputWhenName(_ names: [String: Int], _ to_match: String) {
 ///     - b: divisor
 /// - Returns: true if the number can be divised by divisor, false if not
 func isNumberDivisable(_ a: Int, _ b: Int) -> Bool {
-    if a % b == 0 {
-        return true
-    }
-    return false
+    return a % b == 0
 }
 
 /// Depending on the parameter returns the divisable/undivisable text
@@ -63,51 +79,11 @@ func isNumberDivisable(_ a: Int, _ b: Int) -> Bool {
 /// - Parameters:
 ///     - res: subject of the decision
 /// - Returns  "is divisable by" or "is undivisable by"
-func whichPartTextDivisable(res: Bool) -> String {
-    if res {
-        return "is divisable by"
-    } else {
-        return "is undivisable by"
-    }
-}
-
-/// Prints out the text result if and which the numbers are divisable
-///
-/// ## Example ##
-/// ```
-/// divisableNumbersPrint(8,4) // prints out 8 is divisable by 4
-/// ```
-/// - Parameters:
-///     - a: divident
-///     - b: divisor
-func divisableNumbersPrint(a: Int, b: Int) {
-    let divRes = isNumberDivisable(a, b)
-    let printPart = whichPartTextDivisable(res: divRes)
-    print("\(a) \(printPart) \(b)")
-    
+func isNumberDivisable(_ isDivisable: Bool) -> String {
+    return isDivisable ? "is divisable by" : "is undivisable by"
 }
 
 toOutput(names[0]!)
 toOutputWhenName(names_opposite, "Lukas")
-divisableNumbersPrint(a: 9, b: 3)
 
-// Other notes:
-// Where did the main.swift went after pushed commit to Github?
-//
-// What was done:
-// - Folder containing project was renamed to Lecture-2
-// - git commit by adding . was done
-// - folder had _ in the name (outputs_docs)
-// - outputs_docs after commit and push became unaccessible on Github
-// - Creating a new project without underscore
-// - Commiting new project had access to the folder with main.swift
-//
-// What was found?
-// - Naming the folder with _ is allowed
-// - Renaming the main folder is allowed
-// - Not using Foundation import for using String is allowed (read more on https://developer.apple.com/documentation/foundation)
-//
-//
-// Possible reason of the problem?
-// - Unknown.
-
+let _: () = isNumberDivisable(9, 3)
