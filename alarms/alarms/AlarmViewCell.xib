@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AlarmCellViewController" customModule="alarms" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="redraw" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="alarmCell" rowHeight="127" id="6qL-tm-vXT" customClass="AlarmViewCell" customModule="alarms" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="390" height="127"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6qL-tm-vXT" id="qjc-Eb-2uN">
+                <rect key="frame" x="0.0" y="0.0" width="390" height="127"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YG8-Uc-g09">
+                        <rect key="frame" x="323" y="31" width="51" height="31"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="31" id="VcI-pm-zue"/>
+                            <constraint firstAttribute="width" constant="49" id="mun-e0-jkS"/>
+                        </constraints>
+                        <color key="tintColor" systemColor="linkColor"/>
+                        <color key="onTintColor" name="AccentColor"/>
+                        <connections>
+                            <action selector="alarmSwitchAction:" destination="6qL-tm-vXT" eventType="valueChanged" id="zUl-c6-aEs"/>
+                        </connections>
+                    </switch>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alarm" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Ll-Ak-PDN">
+                        <rect key="frame" x="20" y="96" width="300" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="300" id="Bmx-Ib-dKP"/>
+                            <constraint firstAttribute="height" constant="21" id="H0i-cR-n7m"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0:12" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ozk-mI-5DN">
+                        <rect key="frame" x="15" y="27" width="184" height="61"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="184" id="6v4-hA-SOG"/>
+                            <constraint firstAttribute="height" constant="61" id="tK9-kM-fTC"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="NotoSansMyanmar-Light" family="Noto Sans Myanmar" pointSize="65"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="YG8-Uc-g09" secondAttribute="trailing" constant="18" id="3vo-aG-KHy"/>
+                    <constraint firstItem="8Ll-Ak-PDN" firstAttribute="leading" secondItem="qjc-Eb-2uN" secondAttribute="leading" constant="20" symbolic="YES" id="C1D-ZN-buG"/>
+                    <constraint firstAttribute="trailing" secondItem="8Ll-Ak-PDN" secondAttribute="trailing" constant="10" id="OC2-vx-snr"/>
+                    <constraint firstItem="ozk-mI-5DN" firstAttribute="top" secondItem="qjc-Eb-2uN" secondAttribute="top" constant="27" id="OUD-uM-UTl"/>
+                    <constraint firstAttribute="bottom" secondItem="YG8-Uc-g09" secondAttribute="bottom" constant="65" id="URT-Pb-Ifo"/>
+                    <constraint firstItem="8Ll-Ak-PDN" firstAttribute="top" secondItem="ozk-mI-5DN" secondAttribute="bottom" constant="8" symbolic="YES" id="VOH-4D-fWt"/>
+                    <constraint firstAttribute="trailing" secondItem="YG8-Uc-g09" secondAttribute="trailing" constant="18" id="h2J-kB-Hxf"/>
+                    <constraint firstItem="ozk-mI-5DN" firstAttribute="leading" secondItem="qjc-Eb-2uN" secondAttribute="leading" constant="15" id="tka-rf-WIF"/>
+                    <constraint firstItem="YG8-Uc-g09" firstAttribute="top" secondItem="qjc-Eb-2uN" secondAttribute="top" constant="31" id="vj8-Ry-vCf"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="alarmActiveSwitch" destination="YG8-Uc-g09" id="lGp-EW-U9R"/>
+                <outlet property="alarmDescriptionLabel" destination="8Ll-Ak-PDN" id="qEd-6R-sgd"/>
+                <outlet property="alarmTimeLabel" destination="ozk-mI-5DN" id="iYL-Fp-yPP"/>
+            </connections>
+            <point key="canvasLocation" x="96.92307692307692" y="-50.829383886255918"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
