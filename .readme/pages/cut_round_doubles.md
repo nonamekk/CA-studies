@@ -3,7 +3,6 @@
 </a>
 
 ## Removing numbers after separator in <code>Double</code> numbers
-<<<<<<< HEAD
 The idea, that if would want to remove some numbers in <code>Double</code> value, it would get rounded. Example: 
 ```swift
 	let number: Double = 0.99999999999
@@ -11,31 +10,12 @@ The idea, that if would want to remove some numbers in <code>Double</code> value
 ```
 
 > Quacking: Couldn't find any method to do numbers after separator removal by only addressing number types, so only possible with using <code>String</code> type as it seems.
-=======
-The idea, that if would want to remove some numbers in <code>Double</code> 
-value, it would get rounded. Example: 
-```swift
-    let number: Double = 0.99999999999
-    print(String(format: "%.2f", number)) // Output: 1.00
-```
-
-> Quacking: Couldn't find any method to do numbers after separator removal 
-by only addressing number types, so only possible with using 
-<code>String</code> type as it seems.
->>>>>>> dev
 
 Quick list of actions:
 - Convert number to <code>String</code>.
 - Half the number into two, separated by the dot.
-<<<<<<< HEAD
 - Remove from last characters of <code>String</code> for the ammount of numbers aiming for.
 - Combine everything into one <code>String</code> and convert to <code>Double</code>
-=======
-- Remove from last characters of <code>String</code> for the ammount of 
-numbers aiming for.
-- Combine everything into one <code>String</code> and convert to 
-<code>Double</code>
->>>>>>> dev
 
 ```swift
 import Foundation
@@ -55,12 +35,7 @@ func roundCutDouble(_ number: Double, to afterDot: UInt) -> Double {
             )
         }
         
-<<<<<<< HEAD
         let fullNumberString: String = "\(separatedNumber[0]).\(secondHalf)"
-=======
-        let fullNumberString: String = 
-"\(separatedNumber[0]).\(secondHalf)"
->>>>>>> dev
         
         let fullNumber: Double = Double(fullNumberString)!
         return fullNumber
@@ -81,9 +56,4 @@ let arrayOfNumbers: [Double] = [
 print(roundCutDouble(arrayOfNumbers[0], to: 0))     // -> 0.0
 print(roundCutDouble(arrayOfNumbers[1], to: 2))     // -> 1231231.79
 print(roundCutDouble(arrayOfNumbers[2], to: 6) + 2) // -> 22.299999
-<<<<<<< HEAD
 ```
-=======
-```
-
->>>>>>> dev
