@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="dataCell" rowHeight="138" id="jo5-jd-WXI" customClass="CellView" customModule="restaurants_recipes" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="390" height="138"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jo5-jd-WXI" id="kDa-yK-nFQ">
+                <rect key="frame" x="0.0" y="0.0" width="390" height="138"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YpK-QM-zWK">
+                        <rect key="frame" x="11" y="6.6666666666666643" width="134" height="124.66666666666669"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" preservesSuperviewLayoutMargins="YES" text="Name" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Dy-Qy-oex">
+                        <rect key="frame" x="153.33333333333331" y="6.6666666666666643" width="228.33333333333331" height="124.66666666666669"/>
+                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="19"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="YpK-QM-zWK" firstAttribute="centerY" secondItem="kDa-yK-nFQ" secondAttribute="centerY" id="7NM-99-1KT"/>
+                    <constraint firstItem="YpK-QM-zWK" firstAttribute="centerX" secondItem="kDa-yK-nFQ" secondAttribute="centerX" multiplier="0.4" id="7so-SQ-A0f"/>
+                    <constraint firstItem="7Dy-Qy-oex" firstAttribute="top" secondItem="kDa-yK-nFQ" secondAttribute="top" constant="6.6699999999999999" id="CJn-ir-F41"/>
+                    <constraint firstAttribute="bottom" secondItem="7Dy-Qy-oex" secondAttribute="bottom" constant="6.6699999999999999" id="IpD-LH-oZE"/>
+                    <constraint firstItem="YpK-QM-zWK" firstAttribute="width" secondItem="kDa-yK-nFQ" secondAttribute="width" multiplier="0.34359" id="U9R-sR-TDD"/>
+                    <constraint firstAttribute="trailing" secondItem="7Dy-Qy-oex" secondAttribute="trailing" constant="8.3300000000000001" id="aS5-QE-dJD"/>
+                    <constraint firstItem="YpK-QM-zWK" firstAttribute="height" secondItem="kDa-yK-nFQ" secondAttribute="height" multiplier="0.901408" id="rNT-0g-8RG"/>
+                    <constraint firstItem="7Dy-Qy-oex" firstAttribute="leading" secondItem="YpK-QM-zWK" secondAttribute="trailing" constant="8.3300000000000001" id="xfp-Kn-5iu"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="cellImageView" destination="YpK-QM-zWK" id="sgQ-A2-7cI"/>
+                <outlet property="cellLabel" destination="7Dy-Qy-oex" id="1ee-WG-kLI"/>
+            </connections>
+            <point key="canvasLocation" x="-167.69230769230768" y="-133.64928909952607"/>
+        </tableViewCell>
+    </objects>
+</document>
