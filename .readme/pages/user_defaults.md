@@ -3,20 +3,9 @@
 </a>
 
 ## UserDefaults
-<<<<<<< HEAD
 [UserDefaults](https://developer.apple.com/documentation/foundation/userdefaults) can be used to store small data locally on the device. It is commonly used for app settings or user preferences, through the use of key-value pairs and user's database.<br><br>
 The *key* can only be of type <code>String</code><br>
 The *value* can be of type <code>Data</code>, <code>String</code>, <code>Number</code>, <code>Date</code>, <code>Array</code>, <code>Dictionary</code>.
-=======
-[UserDefaults](https://developer.apple.com/documentation/foundation/userdefaults) 
-can be used to store small data locally on the device. It is commonly used 
-for app settings or user preferences, through the use of key-value pairs 
-and user's database.<br><br>
-The *key* can only be of type <code>String</code><br>
-The *value* can be of type <code>Data</code>, <code>String</code>, 
-<code>Number</code>, <code>Date</code>, <code>Array</code>, 
-<code>Dictionary</code>.
->>>>>>> dev
 
 #### To initialize:
 ```swift
@@ -39,13 +28,7 @@ let dictionary = defaults.dictionary(forKey: "someDictionary")
 ```
 
 ### Storing custom objects in UserDefaults
-<<<<<<< HEAD
 In order to store custom objects like <code>struct</code> one must conform to the <code>Codable</code> protocol to allow convertation to other representations.
-=======
-In order to store custom objects like <code>struct</code> one must conform 
-to the <code>Codable</code> protocol to allow convertation to other 
-representations.
->>>>>>> dev
 ```swift
 struct Pringles: Codable {
     let chips: Int
@@ -53,12 +36,8 @@ struct Pringles: Codable {
 }
 ```
 
-<<<<<<< HEAD
-#### Converting <code>struct</code> data to JSON String, using implementation from [StackOverflow](https://stackoverflow.com/a/66788590).
-=======
 #### Converting <code>struct</code> data to JSON String, using 
 implementation from [StackOverflow](https://stackoverflow.com/a/66788590).
->>>>>>> dev
 ```swift
 extension Encodable {
     
@@ -90,8 +69,3 @@ if let box = newBoxFromDefault {
     print(box[0].crusts)
 }
 ``` 
-<<<<<<< HEAD
-=======
-
-
->>>>>>> dev
